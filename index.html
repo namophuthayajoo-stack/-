@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="bg"></canvas>
+
+  <div id="scene">
+
+    <div id="gift-state">
+      <div class="title-wrap">
+        <div class="title-main">Happy Birthday! 🎉</div>
+        <div class="title-hint">✦ แตะกล่องของขวัญเพื่อเปิด ✦</div>
+      </div>
+
+      <div id="gift-group" onclick="openGift()">
+        <div class="box-shadow"></div>
+
+        <div id="lid-wrap">
+          <div class="lid-face-3d lid-top">
+            <div class="ribbon-3d rib-h"></div>
+            <div class="ribbon-3d rib-v"></div>
+            <div class="bow-wrap">
+              <div class="bow-l"></div>
+              <div class="bow-r"></div>
+              <div class="bow-c"></div>
+            </div>
+          </div>
+          <div class="lid-face-3d lid-front">
+            <div class="ribbon-3d rib-v"></div>
+          </div>
+          <div class="lid-face-3d lid-right">
+            <div class="ribbon-3d rib-v"></div>
+          </div>
+          <div class="lid-face-3d lid-left">
+            <div class="ribbon-3d rib-v"></div>
+          </div>
+        </div>
+
+        <div class="face-3d box-base-face box-front">
+          <div class="ribbon-3d rib-v"></div>
+          <div class="shine-effect"></div>
+        </div>
+        <div class="face-3d box-base-face box-right">
+          <div class="ribbon-3d rib-v"></div>
+        </div>
+        <div class="face-3d box-base-face box-left">
+          <div class="ribbon-3d rib-v"></div>
+        </div>
+
+        <div class="pulse-ring"></div>
+      </div>
+    </div>
+
+    <div id="cake-scene">
+      <div class="cake-3d">
+        <div class="candles-row">
+          <div class="candle">
+            <div class="flame-outer" style="animation-delay:0s"></div>
+            <div class="wick"></div>
+            <div class="candle-body pink-candle"><div class="candle-drip"></div></div>
+          </div>
+          <div class="candle">
+            <div class="flame-outer" style="animation-delay:.13s"></div>
+            <div class="wick"></div>
+            <div class="candle-body yellow-candle"><div class="candle-drip"></div></div>
+          </div>
+          <div class="candle">
+            <div class="flame-outer" style="animation-delay:.27s"></div>
+            <div class="wick"></div>
+            <div class="candle-body teal-candle"><div class="candle-drip"></div></div>
+          </div>
+          <div class="candle">
+            <div class="flame-outer" style="animation-delay:.4s"></div>
+            <div class="wick"></div>
+            <div class="candle-body purple-candle"><div class="candle-drip"></div></div>
+          </div>
+          <div class="candle">
+            <div class="flame-outer" style="animation-delay:.18s"></div>
+            <div class="wick"></div>
+            <div class="candle-body orange-candle"><div class="candle-drip"></div></div>
+          </div>
+        </div>
+
+        <div class="layer main-top-layer">
+          <div class="l-top-top">
+            <div class="top-cream c1"></div>
+            <div class="top-cream c2"></div>
+            <div class="top-cream c3"></div>
+            <div class="top-cream c4"></div>
+            <div class="top-cream c5"></div>
+            <div class="top-cream c6"></div>
+          </div>
+          <div class="l-top-top-right"></div>
+          <div class="l-top-front">
+            <div class="frost-bar"></div>
+            <div class="drip d1"></div>
+            <div class="drip d2"></div>
+            <div class="drip d3"></div>
+            <div class="drip d4"></div>
+            <div class="drip d5"></div>
+            <div class="drip d6"></div>
+            <div class="shine s1"></div>
+            <div class="shine s2"></div>
+            <div class="shine s3"></div>
+            <div class="shine s4"></div>
+            <div class="dot3 pink-dot"></div>
+            <div class="dot3 yellow-dot"></div>
+            <div class="dot3 teal-dot"></div>
+            <div class="dot3 purple-dot"></div>
+          </div>
+          <div class="l-top-right"></div>
+        </div>
+
+        <div class="layer">
+          <div class="l-mid-front">
+            <div class="shine s2" style="background:rgba(255,255,255,.2);"></div>
+            <div class="shine s3" style="background:rgba(255,255,255,.2);"></div>
+          </div>
+          <div class="l-mid-right"></div>
+        </div>
+
+        <div class="layer">
+          <div class="l-bot-front">
+            <div class="shine s1"></div>
+            <div class="shine s2"></div>
+            <div class="shine s3"></div>
+            <div class="shine s4"></div>
+            <div class="shine s5"></div>
+            <div class="dot3 b-dot1"></div>
+            <div class="dot3 b-dot2"></div>
+            <div class="dot3 b-dot3"></div>
+            <div class="dot3 b-dot4"></div>
+            <div class="dot3 b-dot5"></div>
+            <div class="dot3 b-dot6"></div>
+            <div class="dot3 b-dot7"></div>
+            <div class="cake-text">✦ Happy Birthday ✦</div>
+          </div>
+          <div class="l-bot-right"></div>
+        </div>
+
+        <div class="plate"></div>
+      </div>
+
+      <div id="cake-msg">สุขสันต์วันเกิดนะคับน้องแบม 🎂</div>
+      <div id="cake-sub">✨ ขอให้มีความสุขมากๆ ขอให้เป็นปีที่ดีคับผม น่ารักต่อไปเรื่อยๆ ✨</div>
+      <button id="replay-btn" onclick="reset()">▷ เล่นอีกครั้ง</button>
+    </div>
+
+  </div>
+
+  <script>
+    /* ===== PARTICLE BG ===== */
+    (function(){
+      const c=document.getElementById('bg');
+      const ctx=c.getContext('2d');
+      let W,H,particles=[];
+      function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;}
+      window.addEventListener('resize',resize);resize();
+
+      const COLORS=['#f5c842','#ff5fa0','#45d6c8','#9b5de5','#ff9f43','#74b9ff'];
+      for(let i=0;i<90;i++){
+        particles.push({
+          x:Math.random()*W,y:Math.random()*H,
+          r:.5+Math.random()*2.5,
+          c:COLORS[Math.floor(Math.random()*COLORS.length)],
+          vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
+          a:Math.random(),da:.005+Math.random()*.015,phase:Math.random()*Math.PI*2
+        });
+      }
+
+      let t=0;
+      function draw(){
+        ctx.clearRect(0,0,W,H);
+        t+=.016;
+        particles.forEach(p=>{
+          p.x+=p.vx; p.y+=p.vy;
+          if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+          if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+          const alpha=.3+.7*(.5+.5*Math.sin(t*p.da*60+p.phase));
+          ctx.beginPath();
+          ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+          ctx.fillStyle=p.c;ctx.globalAlpha=alpha;ctx.fill();
+        });
+        ctx.globalAlpha=1;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    /* ===== CONFETTI ===== */
+    const CONF_COLORS=['#f5c842','#ff5fa0','#45d6c8','#9b5de5','#ff9f43','#74b9ff','#fd79a8','#55efc4','#fdcb6e'];
+
+    function launchConfetti(burst){
+      const count = burst||80;
+      for(let i=0;i<count;i++){
+        const p=document.createElement('div');
+        p.className='conf';
+        const sz=7+Math.random()*12;
+        const isCircle=Math.random()>.45;
+        p.style.cssText=`
+          left:${10+Math.random()*80}vw;top:-40px;
+          width:${sz}px;height:${sz}px;
+          background:${CONF_COLORS[Math.floor(Math.random()*CONF_COLORS.length)]};
+          border-radius:${isCircle?'50%':'3px'};
+          animation-duration:${2+Math.random()*2.5}s;
+          animation-delay:${Math.random()*.9}s;
+        `;
+        document.body.appendChild(p);
+        setTimeout(()=>p.remove(),4500);
+      }
+    }
+
+    /* ===== OPEN GIFT ===== */
+    function openGift(){
+      document.getElementById('lid-wrap').classList.add('open');
+      setTimeout(()=>launchConfetti(80),350);
+      setTimeout(()=>{
+        document.getElementById('gift-state').style.display='none';
+        const ck=document.getElementById('cake-scene');
+        ck.style.display='flex';
+        setTimeout(()=>launchConfetti(50),600);
+      },600);
+    }
+
+    /* ===== RESET ===== */
+    function reset(){
+      document.getElementById('cake-scene').style.display='none';
+      const gs=document.getElementById('gift-state');
+      gs.style.display='block';
+      document.getElementById('lid-wrap').classList.remove('open');
+    }
+  </script>
+</body>
+</html>
